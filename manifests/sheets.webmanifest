@@ -1,0 +1,117 @@
+{
+  "id": "../apps/sheets.html",
+  "name": "Anka — Spreadsheets · Samvit",
+  "short_name": "Anka",
+  "description": "Spreadsheets in Samvit, running entirely on your device.",
+  "start_url": "../apps/sheets.html",
+  "scope": "../",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
+  "background_color": "#f2f3f6",
+  "theme_color": "#f2f3f6",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "business",
+    "finance"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "../icons/doc-sheet-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-sheet-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-sheet-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-sheet-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "../icons/doc-sheet-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Spreadsheet",
+      "short_name": "Spreadsheet",
+      "description": "Start a new Sheets spreadsheet",
+      "url": "../apps/sheets.html?new=1",
+      "icons": [
+        {
+          "src": "../icons/doc-sheet-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "../apps/sheets.html",
+      "name": "Samvit Spreadsheet",
+      "accept": {
+        "application/x-officesuite-sheet": [
+          ".ossheet"
+        ],
+        "text/csv": [
+          ".csv"
+        ]
+      },
+      "icons": [
+        {
+          "src": "../icons/doc-sheet-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "share_target": {
+    "action": "../apps/sheets.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "text/csv",
+            ".ossheet",
+            ".csv"
+          ]
+        }
+      ]
+    }
+  }
+}

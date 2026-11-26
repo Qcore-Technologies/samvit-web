@@ -1,0 +1,114 @@
+{
+  "id": "../apps/base.html",
+  "name": "Kosha — Databases · Samvit",
+  "short_name": "Kosha",
+  "description": "Databases in Samvit, running entirely on your device.",
+  "start_url": "../apps/base.html",
+  "scope": "../",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
+  "background_color": "#f2f3f6",
+  "theme_color": "#f2f3f6",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "business",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "../icons/doc-base-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-base-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-base-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-base-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "../icons/doc-base-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Database",
+      "short_name": "Database",
+      "description": "Start a new Base database",
+      "url": "../apps/base.html?new=1",
+      "icons": [
+        {
+          "src": "../icons/doc-base-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "../apps/base.html",
+      "name": "Samvit Database",
+      "accept": {
+        "application/x-officesuite-base": [
+          ".osbase"
+        ]
+      },
+      "icons": [
+        {
+          "src": "../icons/doc-base-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "share_target": {
+    "action": "../apps/base.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "text/csv",
+            ".osbase",
+            ".csv"
+          ]
+        }
+      ]
+    }
+  }
+}

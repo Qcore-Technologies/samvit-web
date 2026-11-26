@@ -1,0 +1,116 @@
+{
+  "id": "../apps/pdf.html",
+  "name": "Syra — PDF reader · Samvit",
+  "short_name": "Syra",
+  "description": "Read, search and annotate PDFs in Samvit, parsed entirely on your device.",
+  "start_url": "../apps/pdf.html",
+  "scope": "../",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
+  "background_color": "#f2f3f6",
+  "theme_color": "#f2f3f6",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "../icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "../icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Open a PDF",
+      "short_name": "Open",
+      "description": "Open a PDF file from this device",
+      "url": "../apps/pdf.html?new=1",
+      "icons": [
+        {
+          "src": "../icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "../apps/pdf.html",
+      "name": "PDF document",
+      "accept": {
+        "application/pdf": [
+          ".pdf"
+        ],
+        "application/x-officesuite-pdf": [
+          ".ospdf"
+        ]
+      },
+      "icons": [
+        {
+          "src": "../icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "share_target": {
+    "action": "../apps/pdf.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "application/pdf",
+            ".pdf",
+            ".ospdf"
+          ]
+        }
+      ]
+    }
+  }
+}

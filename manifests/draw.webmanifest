@@ -1,0 +1,114 @@
+{
+  "id": "../apps/draw.html",
+  "name": "Rekha — Drawings · Samvit",
+  "short_name": "Rekha",
+  "description": "Drawings in Samvit, running entirely on your device.",
+  "start_url": "../apps/draw.html",
+  "scope": "../",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
+  "background_color": "#f2f3f6",
+  "theme_color": "#f2f3f6",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "graphics",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "../icons/doc-draw-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-draw-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-draw-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-draw-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "../icons/doc-draw-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Drawing",
+      "short_name": "Drawing",
+      "description": "Start a new Draw canvas",
+      "url": "../apps/draw.html?new=1",
+      "icons": [
+        {
+          "src": "../icons/doc-draw-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "../apps/draw.html",
+      "name": "Samvit Drawing",
+      "accept": {
+        "application/x-officesuite-draw": [
+          ".osdraw"
+        ]
+      },
+      "icons": [
+        {
+          "src": "../icons/doc-draw-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "share_target": {
+    "action": "../apps/draw.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "image/svg+xml",
+            ".osdraw",
+            ".svg"
+          ]
+        }
+      ]
+    }
+  }
+}

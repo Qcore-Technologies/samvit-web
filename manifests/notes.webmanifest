@@ -1,0 +1,121 @@
+{
+  "id": "../apps/notes.html",
+  "name": "Smriti — Notebooks · Samvit",
+  "short_name": "Smriti",
+  "description": "Notebooks in Samvit, running entirely on your device.",
+  "start_url": "../apps/notes.html",
+  "scope": "../",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
+  "background_color": "#f2f3f6",
+  "theme_color": "#f2f3f6",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "../icons/doc-notes-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-notes-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-notes-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-notes-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "../icons/doc-notes-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Notebook",
+      "short_name": "Notebook",
+      "description": "Start a new Notes notebook",
+      "url": "../apps/notes.html?new=1",
+      "icons": [
+        {
+          "src": "../icons/doc-notes-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "../apps/notes.html",
+      "name": "Samvit Notebook",
+      "accept": {
+        "application/x-officesuite-notes": [
+          ".osnotes"
+        ],
+        "text/markdown": [
+          ".md"
+        ],
+        "text/plain": [
+          ".txt"
+        ]
+      },
+      "icons": [
+        {
+          "src": "../icons/doc-notes-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "share_target": {
+    "action": "../apps/notes.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "text/plain",
+            "text/markdown",
+            ".osnotes",
+            ".md",
+            ".txt"
+          ]
+        }
+      ]
+    }
+  }
+}

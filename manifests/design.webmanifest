@@ -1,0 +1,113 @@
+{
+  "id": "../apps/design.html",
+  "name": "Rachana — Design · Samvit",
+  "short_name": "Rachana",
+  "description": "A design studio that runs entirely on your device, with Indic typography that is actually correct.",
+  "start_url": "../apps/design.html",
+  "scope": "../",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
+  "background_color": "#f2f3f6",
+  "theme_color": "#f2f3f6",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "graphics",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "../icons/doc-design-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-design-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-design-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/doc-design-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "../icons/doc-design-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Design",
+      "short_name": "Design",
+      "description": "Start a new Rachana design",
+      "url": "../apps/design.html?new=1",
+      "icons": [
+        {
+          "src": "../icons/doc-design-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "../apps/design.html",
+      "name": "Samvit Design",
+      "accept": {
+        "application/x-officesuite-design": [
+          ".osdesign"
+        ]
+      },
+      "icons": [
+        {
+          "src": "../icons/doc-design-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "share_target": {
+    "action": "../apps/design.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            ".osdesign",
+            ".svg"
+          ]
+        }
+      ]
+    }
+  }
+}

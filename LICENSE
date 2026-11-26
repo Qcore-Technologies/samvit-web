@@ -1,0 +1,59 @@
+Samvit Office Suite
+Copyright (c) 2026 QCore. All rights reserved.
+
+TERMS OF USE
+
+1. Ownership
+
+   Samvit, including the source code, documentation, icons, templates and
+   sample content in this repository, is the property of QCore ("the
+   Company"). Nothing in these terms transfers ownership.
+
+2. Permission granted
+
+   The Company grants you a non-exclusive, non-transferable, revocable licence
+   to install and use Samvit, and to read, build and run its source code for
+   evaluation and internal use.
+
+3. Permission not granted
+
+   Without the Company's prior written agreement you may not:
+
+   (a) distribute, sublicense, sell, rent or lease Samvit or any derivative
+       of it, whether as source or as a built package;
+   (b) remove or obscure the copyright notices in the source, the application
+       or the packaged installers;
+   (c) use the Company's names, logos or trade marks to endorse or promote
+       anything derived from Samvit.
+
+4. Third-party components
+
+   The shipped web application has no third-party runtime code. The desktop
+   package embeds Electron and, through it, Chromium and Node.js, each under
+   its own licence. THIRD-PARTY.md records those licences, and the notices
+   they require travel inside every package the Company distributes.
+
+5. File formats
+
+   Samvit reads and writes published document formats, including ECMA-376 /
+   ISO/IEC 29500 (OOXML) and ISO/IEC 26300 (OpenDocument). Those standards are
+   the work of their respective bodies and are not covered by this licence.
+   IP-REVIEW.md records how the suite stays inside them.
+
+6. No warranty
+
+   SAMVIT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL
+   THE COMPANY BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+   IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+   CONNECTION WITH SAMVIT OR ITS USE.
+
+7. Your documents are yours
+
+   Samvit stores documents on your own device and sends nothing anywhere.
+   The Company claims no right in anything you write with it.
+
+8. Contact
+
+   For any permission beyond clause 2, write to admin@qcore.io.

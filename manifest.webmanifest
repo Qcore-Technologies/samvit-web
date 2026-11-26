@@ -1,0 +1,601 @@
+{
+  "id": "./",
+  "name": "Samvit \u2014 Documents, Spreadsheets, Presentations, Drawings, Databases, Notes",
+  "short_name": "Samvit",
+  "description": "A complete office suite that runs entirely on your device, online or off.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
+  "background_color": "#f2f3f6",
+  "theme_color": "#f2f3f6",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "business",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "icons/icon-48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-167.png",
+      "sizes": "167x167",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Document",
+      "short_name": "Lekha",
+      "description": "Start a new Writer document",
+      "url": "apps/writer.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-writer-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Spreadsheet",
+      "short_name": "Anka",
+      "description": "Start a new Sheets spreadsheet",
+      "url": "apps/sheets.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-sheet-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Presentation",
+      "short_name": "Darsha",
+      "description": "Start a new Slides deck",
+      "url": "apps/slides.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-slides-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Drawing",
+      "short_name": "Rekha",
+      "description": "Start a new Draw canvas",
+      "url": "apps/draw.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-draw-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Database",
+      "short_name": "Kosha",
+      "description": "Start a new Base database",
+      "url": "apps/base.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-base-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Notebook",
+      "short_name": "Smriti",
+      "description": "Start a new Notes notebook",
+      "url": "apps/notes.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-notes-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Address Book",
+      "short_name": "Suchi",
+      "description": "Start a new address book",
+      "url": "apps/contacts.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-contacts-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Calendar",
+      "short_name": "Tithi",
+      "description": "Start a new calendar",
+      "url": "apps/calendar.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-calendar-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Open a PDF",
+      "short_name": "Syra",
+      "description": "Open a PDF file from this device",
+      "url": "apps/pdf.html?new=1",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Meeting",
+      "short_name": "Sabha",
+      "description": "Start a new Sabha meeting",
+      "url": "apps/meet.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-meet-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Picture",
+      "short_name": "Chitra",
+      "description": "Start a new Chitra picture",
+      "url": "apps/image.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-image-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Form",
+      "short_name": "Prashna",
+      "description": "Start a new Prashna form",
+      "url": "apps/forms.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-forms-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "New Design",
+      "short_name": "Rachana",
+      "description": "Start a new Rachana design",
+      "url": "apps/design.html?new=1",
+      "icons": [
+        {
+          "src": "icons/doc-design-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "apps/writer.html",
+      "name": "Lekha document",
+      "accept": {
+        "application/x-officesuite-writer": [
+          ".oswriter"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-writer-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/sheets.html",
+      "name": "Samvit Spreadsheet",
+      "accept": {
+        "application/x-officesuite-sheet": [
+          ".ossheet"
+        ],
+        "text/csv": [
+          ".csv"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-sheet-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/slides.html",
+      "name": "Samvit Presentation",
+      "accept": {
+        "application/x-officesuite-slides": [
+          ".osslides"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-slides-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/draw.html",
+      "name": "Samvit Drawing",
+      "accept": {
+        "application/x-officesuite-draw": [
+          ".osdraw"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-draw-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/base.html",
+      "name": "Samvit Database",
+      "accept": {
+        "application/x-officesuite-base": [
+          ".osbase"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-base-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/notes.html",
+      "name": "Samvit Notebook",
+      "accept": {
+        "application/x-officesuite-notes": [
+          ".osnotes"
+        ],
+        "text/markdown": [
+          ".md"
+        ],
+        "text/plain": [
+          ".txt"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-notes-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/contacts.html",
+      "name": "Samvit Contacts",
+      "accept": {
+        "application/x-officesuite-contacts": [
+          ".oscontacts"
+        ],
+        "text/vcard": [
+          ".vcf",
+          ".vcard"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-contacts-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/image.html",
+      "name": "Samvit Picture",
+      "accept": {
+        "application/x-officesuite-image": [
+          ".osimage"
+        ],
+        "image/png": [
+          ".png"
+        ],
+        "image/jpeg": [
+          ".jpg",
+          ".jpeg"
+        ],
+        "image/webp": [
+          ".webp"
+        ],
+        "image/gif": [
+          ".gif"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-image-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "index.html",
+      "name": "Samvit Data",
+      "accept": {
+        "application/json": [
+          ".json"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/calendar.html",
+      "name": "Samvit Calendar",
+      "accept": {
+        "application/x-officesuite-calendar": [
+          ".oscalendar"
+        ],
+        "text/calendar": [
+          ".ics"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-calendar-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/pdf.html",
+      "name": "PDF document",
+      "accept": {
+        "application/pdf": [
+          ".pdf"
+        ],
+        "application/x-officesuite-pdf": [
+          ".ospdf"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/meet.html",
+      "name": "Samvit Meeting",
+      "accept": {
+        "application/x-officesuite-meet": [
+          ".osmeet"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-meet-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/forms.html",
+      "name": "Samvit Form",
+      "accept": {
+        "application/x-officesuite-forms": [
+          ".osforms"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-forms-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "apps/design.html",
+      "name": "Samvit Design",
+      "accept": {
+        "application/x-officesuite-design": [
+          ".osdesign"
+        ]
+      },
+      "icons": [
+        {
+          "src": "icons/doc-design-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "share_target": {
+    "action": "index.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "text/plain",
+            "text/markdown",
+            "text/csv",
+            "application/json",
+            ".oswriter",
+            ".ossheet",
+            ".osslides",
+            ".osdraw",
+            ".osbase",
+            ".osnotes",
+            ".md",
+            ".txt",
+            ".csv",
+            ".json",
+            "text/vcard",
+            ".oscontacts",
+            ".vcf",
+            "image/png",
+            "image/jpeg",
+            "image/webp",
+            "image/gif",
+            ".osimage",
+            ".png",
+            ".jpg",
+            ".jpeg",
+            ".webp",
+            ".gif"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Offline — Samvit</title>
+<meta name="description" content="Samvit is offline. Your documents are still here.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#f2f3f6">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f3f6">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14161c">
+<link rel="icon" href="icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/mobile.css">
+<style>
+  .off {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--sp-8, 32px) var(--sp-6, 20px) var(--sp-9, 48px);
+  }
+
+  .off__mark {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4, 12px);
+    margin-bottom: var(--sp-6, 20px);
+  }
+  .off__mark img { width: 48px; height: 48px; border-radius: var(--r-md, 8px); }
+  .off__mark strong { font-size: var(--fs-xl, 20px); display: block; }
+  .off__mark span { color: var(--fg-subtle); font-size: var(--fs-sm, 13px); }
+
+  .off__card {
+    padding: var(--sp-6, 20px);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg, 12px);
+    background: var(--surface);
+  }
+
+  .off__title { font-size: var(--fs-2xl, 24px); font-weight: 700; margin-bottom: var(--sp-3, 8px); }
+  .off__lede { color: var(--fg-muted); margin-bottom: var(--sp-5, 16px); }
+
+  .off__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3, 8px); margin-bottom: var(--sp-6, 20px); }
+
+  .off__section-title {
+    font-size: var(--fs-sm, 13px);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--fg-subtle);
+    margin: var(--sp-6, 20px) 0 var(--sp-3, 8px);
+  }
+
+  .off__list { display: grid; gap: var(--sp-2, 6px); }
+
+  .off__doc {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4, 12px);
+    padding: var(--sp-3, 8px) var(--sp-4, 12px);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md, 8px);
+    background: var(--bg);
+    color: inherit;
+    text-decoration: none;
+  }
+  .off__doc:hover { border-color: var(--accent); }
+  .off__doc-icon { display: flex; flex: none; color: var(--app-color, var(--accent)); }
+  .off__doc-name { flex: 1 1 auto; font-weight: 600; }
+  .off__doc-meta { color: var(--fg-subtle); font-size: var(--fs-sm, 13px); }
+
+  .off__apps { display: flex; flex-wrap: wrap; gap: var(--sp-3, 8px); }
+
+  .off__note {
+    margin-top: var(--sp-6, 20px);
+    color: var(--fg-subtle);
+    font-size: var(--fs-sm, 13px);
+  }
+</style>
+</head>
+<body class="app-offline">
+<div class="off">
+  <div class="off__mark">
+    <img src="icons/icon-192.png" alt="" width="48" height="48">
+    <span>
+      <strong>Samvit</strong>
+      <span>Everything runs in your browser</span>
+    </span>
+  </div>
+
+  <div class="off__card">
+    <h1 class="off__title">You are offline</h1>
+    <p class="off__lede">
+      That page has not been cached on this device yet. Everything already saved here is
+      untouched — documents live in this browser, not on a server.
+    </p>
+
+    <div class="off__actions">
+      <button class="os-btn os-btn--primary" type="button" id="off-retry">Try again</button>
+      <a class="os-btn" href="index.html">Open the launcher</a>
+    </div>
+
+    <div id="off-body"></div>
+  </div>
+
+  <p class="off__note">
+    When the connection comes back, Samvit updates itself in the background and tells you
+    when the new version is ready.
+  </p>
+</div>
+
+<script src="js/core/util.js"></script>
+<script src="js/core/icons.js"></script>
+<script src="js/core/storage.js"></script>
+<script>
+(function (OS) {
+  'use strict';
+
+  const U = OS.util;
+  const { el, on } = U;
+
+  const APPS = [
+    { id: 'writer', name: 'Writer', kind: 'writer', href: 'apps/writer.html' },
+    { id: 'sheets', name: 'Sheets', kind: 'sheet', href: 'apps/sheets.html' },
+    { id: 'slides', name: 'Slides', kind: 'slides', href: 'apps/slides.html' },
+    { id: 'draw', name: 'Draw', kind: 'draw', href: 'apps/draw.html' },
+    { id: 'base', name: 'Base', kind: 'base', href: 'apps/base.html' },
+    { id: 'notes', name: 'Notes', kind: 'notes', href: 'apps/notes.html' },
+  ];
+
+  // The theme is a stored preference, and this page ships without app.js.
+  const theme = OS.vfs.getSetting('theme') || 'auto';
+  if (theme !== 'auto') document.documentElement.setAttribute('data-theme', theme);
+
+  const body = document.getElementById('off-body');
+  const entries = OS.vfs.list();
+
+  if (entries.length) {
+    body.appendChild(el('p.off__section-title', {
+      text: entries.length + (entries.length === 1 ? ' document' : ' documents') + ' available offline',
+    }));
+
+    body.appendChild(el('.off__list', {}, entries.slice(0, 12).map((entry) => {
+      const info = OS.vfs.kindInfo(entry.kind);
+      const app = APPS.find((a) => a.kind === entry.kind);
+      return el('a.off__doc', {
+        href: app ? app.href + '?doc=' + encodeURIComponent(entry.id) : 'index.html',
+        style: { '--app-color': 'var(--app-' + (app ? app.id : 'writer') + ')' },
+      }, [
+        el('span.off__doc-icon', { html: OS.icons.svg(info.icon, { size: 18 }), 'aria-hidden': 'true' }),
+        el('span.off__doc-name', { text: entry.name }),
+        el('span.off__doc-meta', { text: info.label + ' · ' + U.relativeTime(entry.modified) }),
+      ]);
+    })));
+
+    if (entries.length > 12) {
+      body.appendChild(el('p.off__note', { text: 'and ' + (entries.length - 12) + ' more in the launcher.' }));
+    }
+  } else {
+    body.appendChild(el('p.off__section-title', { text: 'Start something new' }));
+  }
+
+  body.appendChild(el('p.off__section-title', { text: 'Apps' }));
+  body.appendChild(el('.off__apps', {}, APPS.map((app) =>
+    el('a.os-btn', { href: app.href + '?new=1', text: 'New ' + app.name })
+  )));
+
+  on(document.getElementById('off-retry'), 'click', () => window.location.reload());
+})(window.OS);
+</script>
+</body>
+</html>

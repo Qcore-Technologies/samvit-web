@@ -1,0 +1,799 @@
+
+
+.app-contacts .os-content {
+  padding: 0;
+  overflow: hidden;
+}
+
+.app-contacts .contacts {
+  display: grid;
+  grid-template-columns: 216px 320px minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  background: var(--bg);
+}
+
+.app-contacts .contacts[data-mode="grid"] {
+  grid-template-columns: 216px minmax(0, 1fr) 360px;
+}
+
+.app-contacts .contacts[data-mode="table"] {
+  grid-template-columns: 216px minmax(0, 1fr) 340px;
+}
+
+.app-contacts .contacts__side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  min-width: 0;
+  padding: var(--sp-5) var(--sp-3);
+  overflow-y: auto;
+  background: var(--surface-2);
+  border-right: 1px solid var(--border);
+}
+
+.app-contacts .contacts__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.app-contacts .contacts__section-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0 var(--sp-2) var(--sp-1);
+}
+
+.app-contacts .contacts__section-title {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.app-contacts .contacts__mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--fg-muted);
+  cursor: pointer;
+}
+
+.app-contacts .contacts__mini:hover {
+  background: var(--surface-3);
+  color: var(--fg);
+}
+
+.app-contacts .contacts__smart,
+.app-contacts .contacts__group {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+  padding: var(--sp-3) var(--sp-3);
+  border: 0;
+  border-left: 3px solid transparent;
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--fg-muted);
+  font: inherit;
+  font-size: var(--fs-md);
+  text-align: left;
+  cursor: pointer;
+}
+
+.app-contacts .contacts__group {
+  border-left-color: var(--group-color, transparent);
+}
+
+.app-contacts .contacts__smart:hover,
+.app-contacts .contacts__group:hover {
+  background: var(--surface-3);
+  color: var(--fg);
+}
+
+.app-contacts .contacts__smart.is-active,
+.app-contacts .contacts__group.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.app-contacts .contacts__smart-icon,
+.app-contacts .contacts__group-icon {
+  display: inline-flex;
+  flex: none;
+  color: var(--app-contacts);
+}
+
+.app-contacts .contacts__smart-name,
+.app-contacts .contacts__group-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-contacts .contacts__count {
+  flex: none;
+  font-size: var(--fs-xs);
+  color: var(--fg-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.app-contacts .contacts__empty {
+  margin: 0;
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--fg-subtle);
+}
+
+.app-contacts .contacts__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding: 0 var(--sp-2);
+}
+
+.app-contacts .contacts__tag {
+  padding: 2px var(--sp-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  background: var(--surface);
+  color: var(--fg-muted);
+  font: inherit;
+  font-size: var(--fs-xs);
+  cursor: pointer;
+}
+
+.app-contacts .contacts__tag:hover { border-color: var(--border-strong); color: var(--fg); }
+
+.app-contacts .contacts__tag.is-active {
+  border-color: var(--tag-color, var(--accent));
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.app-contacts .contacts__letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 0 var(--sp-2);
+}
+
+.app-contacts .contacts__letter {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--fg-subtle);
+  font: inherit;
+  font-size: var(--fs-xs);
+  cursor: pointer;
+}
+
+.app-contacts .contacts__letter:hover { background: var(--surface-3); color: var(--fg); }
+.app-contacts .contacts__letter.is-active { background: var(--accent); color: var(--fg-on-accent); }
+
+.app-contacts .contacts__list {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.app-contacts .contacts__list-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.app-contacts .contacts__list-count {
+  flex: 1 1 auto;
+  font-size: var(--fs-sm);
+  color: var(--fg-muted);
+}
+
+.app-contacts .contacts__rows {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--sp-2) 0 var(--sp-6);
+}
+
+.app-contacts .contacts__letter-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: var(--sp-2) var(--sp-5);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--fg-subtle);
+}
+
+.app-contacts .contacts__row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 100%;
+  padding: var(--sp-3) var(--sp-5);
+  border: 0;
+  border-left: 3px solid transparent;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.app-contacts .contacts__row:hover { background: var(--surface-2); }
+.app-contacts .contacts__row.is-selected { background: var(--accent-soft); }
+
+.app-contacts .contacts__row.is-active {
+  border-left-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.app-contacts .contacts__row-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.app-contacts .contacts__row-name {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-contacts .contacts__row-sub {
+  font-size: var(--fs-sm);
+  color: var(--fg-subtle);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-contacts .contacts__row-star,
+.app-contacts .contacts__primary,
+.app-contacts .contacts__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border: 0;
+  border-radius: var(--r-full);
+  background: transparent;
+  color: var(--fg-subtle);
+  cursor: pointer;
+}
+
+.app-contacts .contacts__row-star:hover,
+.app-contacts .contacts__primary:hover,
+.app-contacts .contacts__remove:hover {
+  background: var(--surface-3);
+  color: var(--fg);
+}
+
+.app-contacts .contacts__row-star.is-on { color: var(--warn); }
+.app-contacts .contacts__primary.is-on { background: var(--ok-soft); color: var(--ok); }
+
+.app-contacts .contacts__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  overflow: hidden;
+  border-radius: var(--r-full);
+  background: var(--surface-3);
+}
+
+.app-contacts .contacts__avatar--initials {
+  background: var(--app-contacts);
+  color: var(--fg-on-accent);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.app-contacts .contacts__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-contacts .contacts__rows.is-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+}
+
+.app-contacts .contacts__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-5);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  color: var(--fg);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.app-contacts .contacts__card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-1); }
+.app-contacts .contacts__card.is-active { border-color: var(--accent); background: var(--accent-soft); }
+
+.app-contacts .contacts__card-name {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-contacts .contacts__card-sub {
+  font-size: var(--fs-sm);
+  color: var(--fg-subtle);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-contacts .contacts__card .contacts__row-star {
+  position: absolute;
+  top: var(--sp-2);
+  right: var(--sp-2);
+}
+
+.app-contacts .contacts__rows.is-table { padding: 0; }
+
+.app-contacts .contacts__trow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, .8fr);
+  gap: var(--sp-4);
+  width: 100%;
+  padding: var(--sp-3) var(--sp-5);
+  border: 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  font-size: var(--fs-md);
+  text-align: left;
+  cursor: pointer;
+}
+
+.app-contacts .contacts__trow.is-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface-2);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+  cursor: default;
+}
+
+.app-contacts .contacts__trow:not(.is-head):hover { background: var(--surface-2); }
+.app-contacts .contacts__trow.is-active { background: var(--accent-soft); }
+.app-contacts .contacts__trow.is-selected { background: var(--accent-soft); }
+
+.app-contacts .contacts__cell {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-contacts .contacts__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-9) var(--sp-6);
+  color: var(--fg-subtle);
+  text-align: center;
+}
+
+.app-contacts .contacts__main {
+  min-width: 0;
+  overflow-y: auto;
+  background: var(--bg);
+}
+
+.app-contacts .contacts__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--sp-7);
+  color: var(--fg-subtle);
+}
+
+.app-contacts .contacts__detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  max-width: 720px;
+  padding: var(--sp-6) var(--sp-6) var(--sp-9);
+}
+
+.app-contacts .contacts__detail-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.app-contacts .contacts__photo-button {
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-full);
+  background: transparent;
+  cursor: pointer;
+}
+
+.app-contacts .contacts__detail-titles { min-width: 0; }
+
+.app-contacts .contacts__detail-name {
+  margin: 0;
+  font-size: var(--fs-2xl);
+  line-height: 1.15;
+}
+
+.app-contacts .contacts__detail-role {
+  margin: var(--sp-1) 0 0;
+  font-size: var(--fs-md);
+  color: var(--fg-muted);
+}
+
+.app-contacts .contacts__detail-flags {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+.app-contacts .contacts__flag {
+  padding: 1px var(--sp-3);
+  border-radius: var(--r-full);
+  background: var(--surface-3);
+  font-size: var(--fs-xs);
+  color: var(--fg-muted);
+}
+
+.app-contacts .contacts__flag.is-warn { background: var(--warn-soft); color: var(--warn); }
+
+.app-contacts .contacts__group-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.app-contacts .contacts__heading {
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.app-contacts .contacts__heading-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.app-contacts .contacts__heading-row .contacts__heading { flex: 1 1 auto; }
+
+.app-contacts .contacts__heading-actions { display: flex; gap: var(--sp-2); }
+
+.app-contacts .contacts__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--sp-4);
+}
+
+.app-contacts .contacts__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  min-width: 0;
+}
+
+.app-contacts .contacts__field.is-wide { grid-column: 1 / -1; }
+
+.app-contacts .contacts__label {
+  font-size: var(--fs-xs);
+  color: var(--fg-subtle);
+}
+
+.app-contacts .contacts__rows-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.app-contacts .contacts__value-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.app-contacts .contacts__value-row .os-input:not(.contacts__type) { flex: 1 1 auto; min-width: 0; }
+
+.app-contacts .contacts__type { flex: none; width: 104px; }
+
+.app-contacts .contacts__value-label {
+  flex: none;
+  padding: 1px var(--sp-3);
+  border-radius: var(--r-full);
+  background: var(--surface-3);
+  font-size: var(--fs-xs);
+  color: var(--fg-muted);
+}
+
+.app-contacts .contacts__address {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+}
+
+.app-contacts .contacts__address-summary {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  color: var(--fg-muted);
+}
+
+.app-contacts .contacts__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.app-contacts .contacts__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 2px var(--sp-2) 2px var(--sp-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  background: var(--surface-2);
+  font-size: var(--fs-sm);
+}
+
+.app-contacts .contacts__notes { width: 100%; resize: vertical; }
+
+.app-contacts .contacts__stamp {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--fg-subtle);
+}
+
+.app-contacts .contacts__stats,
+.app-contacts .contacts__tag-rows,
+.app-contacts .contacts__issues,
+.app-contacts .contacts__dupes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  max-height: 58vh;
+  overflow-y: auto;
+}
+
+.app-contacts .contacts__stat-row,
+.app-contacts .contacts__tag-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-2) var(--sp-3);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--fs-md);
+}
+
+.app-contacts .contacts__stat-row span { flex: 1 1 auto; color: var(--fg-muted); }
+.app-contacts .contacts__tag-name { flex: 1 1 auto; font-weight: 600; }
+
+.app-contacts .contacts__issue {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--fg);
+  font: inherit;
+  font-size: var(--fs-md);
+  text-align: left;
+  cursor: pointer;
+}
+
+.app-contacts .contacts__issue:hover { border-color: var(--accent); }
+
+.app-contacts .contacts__issue-kind {
+  flex: none;
+  padding: 1px var(--sp-3);
+  border-radius: var(--r-full);
+  background: var(--warn-soft);
+  color: var(--warn);
+  font-size: var(--fs-xs);
+  text-transform: capitalize;
+}
+
+.app-contacts .contacts__issue.is-duplicate .contacts__issue-kind {
+  background: var(--info-soft);
+  color: var(--info);
+}
+
+.app-contacts .contacts__issue-text { flex: 1 1 auto; }
+
+.app-contacts .contacts__dupe {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.app-contacts .contacts__dupe-head { display: flex; align-items: baseline; gap: var(--sp-4); }
+.app-contacts .contacts__dupe-head b { flex: 1 1 auto; }
+
+.app-contacts .contacts__dupe-list {
+  margin: 0;
+  padding-left: var(--sp-6);
+  font-size: var(--fs-sm);
+  color: var(--fg-muted);
+}
+
+.app-contacts .contacts__dupe-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.app-contacts .contacts__dupe-actions .os-input { flex: 1 1 auto; min-width: 0; }
+
+.app-contacts .contacts__dupes-intro,
+.app-contacts .contacts__paste p {
+  margin: 0 0 var(--sp-4);
+  font-size: var(--fs-md);
+  color: var(--fg-muted);
+}
+
+.app-contacts .contacts__paste textarea { width: 100%; font-family: var(--font-mono); }
+
+.ct-picker__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.ct-picker__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.ct-picker__status {
+  flex: 1 1 auto;
+  margin: 0;
+  text-align: right;
+  font-size: var(--fs-sm);
+  color: var(--fg-subtle);
+}
+
+.ct-picker__list {
+  display: flex;
+  flex-direction: column;
+  max-height: 46vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+}
+
+.ct-picker__row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ct-picker__row:last-child { border-bottom: 0; }
+.ct-picker__row:hover { background: var(--surface-2); }
+
+.ct-picker__label {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1 1 auto;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.ct-picker__name { font-size: var(--fs-md); font-weight: 600; }
+
+.ct-picker__detail,
+.ct-picker__book {
+  font-size: var(--fs-sm);
+  color: var(--fg-subtle);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ct-picker__book { font-style: italic; }
+
+.ct-picker__empty {
+  margin: 0;
+  padding: var(--sp-5);
+  font-size: var(--fs-sm);
+  color: var(--fg-subtle);
+  text-align: center;
+}
+
+@media (max-width: 1180px) {
+  .app-contacts .contacts,
+  .app-contacts .contacts[data-mode="grid"],
+  .app-contacts .contacts[data-mode="table"] {
+    grid-template-columns: 180px 280px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 920px) {
+  .app-contacts .contacts,
+  .app-contacts .contacts[data-mode="grid"],
+  .app-contacts .contacts[data-mode="table"] {
+    grid-template-columns: 0 260px minmax(0, 1fr);
+  }
+
+  .app-contacts .contacts__side { display: none; }
+}
